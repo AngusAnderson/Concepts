@@ -9,10 +9,6 @@
 
 /* Universal style sheet begin: */
 
-    /* Font used for hero is Homenaje. */
-
-    @import url('https://fonts.googleapis.com/css2?family=Homenaje&display=swap');
-
     h1 {
         margin: 0;
     }
@@ -24,10 +20,17 @@
         padding: 0;
         width: 100%;
         min-height: 100%;
+        cursor: url('../assets/cursor/cursor.png'), auto;
     }
 
     body {
         overflow-x: hidden;
     }
+
+    /* Scrollbar go bye bye */
+
+        ::-webkit-scrollbar {
+            width: 0;
+        }
 
 /* Universal style sheet end */

@@ -1,26 +1,25 @@
-import './hero.css';
-import heroBg from '../../assets/hero-bg.jpg';
+import { useState, useRef } from "react";
+import useHeroScene from "./useHeroScene";
+import HeroOverlay from "./heroOverlay";
+import "./hero.css";
+import "./spinner.css";
 
 export default function Hero() {
-    return (
-        <section className="hero">
-            <div className='hero__art' style={{ backgroundImage: `url(${heroBg})` }} aria-hidden='true'/>
+  const mountRef = useRef(null);
+  const [loading, setLoading] = useState(true);
 
-            <div className='hero__overlay' aria-hidden='true'>
-                <span className='hero__stripe hero__stripe--top-left' />
-                <span className='hero__stripe hero__stripe--bottom-right' />
+  useHeroScene(mountRef, setLoading);
 
-                <span className='hero__line hero__line--left-1' />
-                <span className='hero__line hero__line--left-2' />
-                <span className='hero__line hero__line--right' />
-            </div>
+  return (
+    <section className="hero">
+      <div ref={mountRef} className="hero-canvas" />
 
-            <div className='hero__content'>
-                <div className='hero__text'>
-                    <h1 className='hero__title'>IMAGINE</h1>
-                    <p className='hero__subtitle'>THE POSSIBILITIES</p>
-                </div>
-            </div>
-        </section>
-    );
+      <HeroOverlay loading={loading} />
+
+      <div className={`hero-loading ${loading ? "hero-loading--visible" : ""}`}>
+        <div className="hero-loading__ring" />
+        <div className="hero-loading__text">Loading</div>
+      </div>
+    </section>
+  );
 }

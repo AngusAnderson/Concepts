@@ -1,141 +1,123 @@
 .hero {
     position: relative;
-    min-height: 100svh;
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
-    background: #0d1830;
-}
-
-/* Background hero image  */
-
-    .hero__art {
-        position: absolute;
-        inset: 0;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        opacity: 0.95;
-    }
-
-    .hero__overlay {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        pointer-events: none;
-        overflow: hidden;
-    }
-
-
-/* Diagonal stripes on the top left and bottom right corners of the hero section */
-
-    .hero__stripe {
-        position: absolute;
-        display: block;
-        z-index: 1;
-        pointer-events: none;
-        filter: blur(12px);
-        opacity: 0.9;
-    }
-
-    .hero__stripe--top-left {
-        width: 34rem;
-        height: 7rem;
-        top: 2rem;
-        left: -6rem;
-        transform: rotate(-35deg);
-        background: linear-gradient(
-            90deg,
-            rgba(1, 28, 59, 0) 0%,
-            rgba(1, 28, 59, 0.95) 30%,
-            rgba(1, 28, 59, 0.95) 70%,
-            rgba(1, 28, 59, 0) 100%
-        );
-    }
-
-    .hero__stripe--bottom-right {
-        width: 42rem;
-        height: 8rem;
-        right: -8rem;
-        bottom: 1rem;
-        transform: rotate(-35deg);
-        background: linear-gradient(
-            90deg,
-            rgba(40, 77, 122, 0) 0%,
-            rgba(40, 77, 122, 0.95) 30%,
-            rgba(40, 77, 122, 0.95) 70%,
-            rgba(40, 77, 122, 0) 100%
-        );
-    }
-
-
-/* vertical lines init... Games game */
-
-    .hero__line {
-        position: absolute;
-        width: 1px;
-        background: rgba(236, 237, 234, 0.55);
-        box-shadow: 0 0 8px rgba(236, 237, 234, 0.18);
-    }
-
-    .hero__line--left-1 {
-        left: 3.8%;
-        top: 23%;
-        height: 60%;
-    }
-
-    .hero__line--left-2 {
-        left: 6.3%;
-        top: 20%;
-        height: 45%;
-    }
-
-    .hero__line--right {
-        right: 4.2%;
-        top: 6%;
-        height: 72%;
-    }
-    
-
-/* Text on the screen, you could not imagine how long it took to get this to work, thought it would take 5-10 minutes... No. How long did it take? Yes */
-
-    .hero__content {
-        position: relative;
-        z-index: 2;
-        min-height: 100svh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: clamp(3rem, 7vh, 6rem);
-        text-align: center;
-        color: #ECEDEA;
-        font-family: "Homenaje", sans-serif;
-        -webkit-text-stroke: 1px black;
-    }
-
-    .hero__text {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero__title {
-        margin: 0;
-        font-size: 8rem;
-        line-height: 0.82;
-        letter-spacing: 0.035em;
-        font-weight: 400;
-        transform: scale(.7, 3);
-        transform-origin: center top;
-        -webkit-font-smoothing: antialiased;
-    }
-
-    .hero__subtitle {
-        margin: 11.5rem 0 0;
-        width: max-content;
-        font-size: 1.8rem;
-        font-weight: 300;
-        line-height: 1;
-        letter-spacing: .23em;
-        margin-right: -0.2em;
-        text-align: center;
-    }
+    background: radial-gradient(circle at center, #111111 0%, #050505 50%, #000000 100%);
+    color: white;
+  }
+  
+  .hero-canvas {
+    position: absolute;
+    inset: 0;
+  }
+  
+  .hero-canvas canvas {
+    display: block;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .hero-overlay--hidden {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  
+  .hero-overlay--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .hero-brand {
+    position: absolute;
+    top: 24px;
+    left: 28px;
+    font-family: serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.16em;
+  }
+  
+  .hero-nav {
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2.5rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+  
+  .hero-menu {
+    position: absolute;
+    top: 24px;
+    right: 22px;
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+  }
+  
+  .hero-dots {
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .hero-dots__active {
+    width: 34px;
+    height: 3px;
+    background: #2a46ff;
+    border-radius: 999px;
+  }
+  
+  .hero-dots__dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #777;
+  }
+  
+  .hero-title {
+    position: absolute;
+    left: 50%;
+    top: 56%;
+    transform: translate(-50%, -50%);
+    text-align: right;
+    font-family: serif;
+    font-weight: 400;
+    line-height: 0.9;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+  }
+  
+  .hero-title div {
+    font-size: clamp(2.8rem, 7vw, 6rem);
+  }
+  
+  .hero-text {
+    position: absolute;
+    right: 10%;
+    bottom: 22%;
+    width: 18rem;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+    text-align: left;
+  }
+  
+  .hero-fade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.22));
+  }
