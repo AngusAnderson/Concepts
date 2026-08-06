@@ -90,14 +90,13 @@
 
 .hero-overall-text {
   position: absolute;
-  bottom: 12vh;
-  right: 18vw;
+  right: 14vw;
+  bottom: 11vh;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 1.5rem;
-  max-width: 24rem;
-  pointer-events: none;
+  gap: 1rem;
+  max-width: 26rem;
 }
 
 .hero-title {
@@ -115,9 +114,9 @@
 }
 
 .hero-text {
-  font-size: 0.8rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.86);
   text-align: right;
 }
 
