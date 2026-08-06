@@ -28,11 +28,9 @@ export default function HeroOverlay({ loading }) {
             <div>Antica</div>
             </div>
     
-            {/* <div className="hero-text">
-            Lorem ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem ipsum has been the industry&apos;s standard dummy text ever since the
-            1500s.
-            </div> */}
+            <div className="hero-text">
+            Statue of Aspasia in Schönbrunn Palace Park in Vienna. Aspasia was a Greek philosopher, orator and the second wife of Pericles. Here she is depicted in the form and with the attributes of the goddess Pallas Athena. The sculpture by Johann Wilhelm Beyer dates from 1777.
+            </div>
         </div>
         
   
