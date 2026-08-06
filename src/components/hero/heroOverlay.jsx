@@ -21,17 +21,20 @@ export default function HeroOverlay({ loading }) {
           <div className="hero-dots__dot" />
         </div>
   
-        <div className="hero-title">
-          <div>Museo</div>
-          <div>di Storia</div>
-          <div>Antica</div>
+        <div className="hero-overall-text">
+            <div className="hero-title">
+            <div>Museo</div>
+            <div>di Storia</div>
+            <div>Antica</div>
+            </div>
+    
+            {/* <div className="hero-text">
+            Lorem ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem ipsum has been the industry&apos;s standard dummy text ever since the
+            1500s.
+            </div> */}
         </div>
-  
-        <div className="hero-text">
-          Lorem ipsum is simply dummy text of the printing and typesetting industry.
-          Lorem ipsum has been the industry&apos;s standard dummy text ever since the
-          1500s.
-        </div>
+        
   
         <div className="hero-fade" />
       </div>

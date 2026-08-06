@@ -24,6 +24,15 @@ export default function useHeroScene(mountRef, setLoading) {
     );
     camera.position.set(0, 0.9, 7.2);
 
+    // const ambient = new THREE.AmbientLight(0xF5BF18, 0.2);
+    // scene.add(ambient);
+
+    const statueLight = new THREE.PointLight(0xFBFAF2, .2, 5, 2);
+    statueLight.position.set(0, .5, 7);
+    scene.add(statueLight);
+
+    
+
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -89,5 +98,6 @@ export default function useHeroScene(mountRef, setLoading) {
         container.removeChild(renderer.domElement);
       }
     };
+    
   }, [mountRef, setLoading]);
 }

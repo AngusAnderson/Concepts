@@ -77,7 +77,7 @@
   .hero-dots__active {
     width: 34px;
     height: 3px;
-    background: #2a46ff;
+    background: #F5BF18;
     border-radius: 999px;
   }
   
@@ -89,15 +89,12 @@
   }
   
   .hero-title {
-    position: absolute;
-    left: 50%;
-    top: 56%;
-    transform: translate(-50%, -50%);
     text-align: right;
     font-family: serif;
     font-weight: 400;
     line-height: 0.9;
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    color: #FBFAF2;
     z-index: 2;
   }
   
@@ -106,9 +103,6 @@
   }
   
   .hero-text {
-    position: absolute;
-    right: 10%;
-    bottom: 22%;
     width: 18rem;
     font-size: 0.8rem;
     line-height: 1.6;
@@ -120,4 +114,11 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.22));
+  }
+
+  .hero-overall-text {
+    display: inline-flex;
+    position: absolute;
+    right: 10%;
+    bottom: 22%;
   }

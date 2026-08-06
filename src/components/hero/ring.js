@@ -2,7 +2,7 @@ import * as THREE from "three";
 
 export function createRingGroup() {
   const ringGroup = new THREE.Group();
-  ringGroup.position.set(0, 1.6, -1.1);
+  ringGroup.position.set(0, 0, -1.1);
 
   const coreGeometry = new THREE.TorusGeometry(2.32, 0.045, 32, 220);
   const coreMaterial = new THREE.MeshBasicMaterial({ color: 0xB81104 });

@@ -1,7 +1,14 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
-export function loadCenteredModel(path) {
+export function loadCenteredModel(path, options = {}) {
+  const {
+    scaleFactor = 2.75,
+    yOffset = -.5,
+    xOffset = 0,
+    zOffset = 6,
+  } = options;
+
   const loader = new GLTFLoader();
 
   return new Promise((resolve, reject) => {
@@ -18,8 +25,8 @@ export function loadCenteredModel(path) {
             if (child.material) {
               child.material = child.material.clone();
               child.material.metalness = 0;
-              child.material.roughness = 1;
-              child.material.color = new THREE.Color(0x050505);
+              child.material.roughness = 0.85;
+              child.material.color = new THREE.Color(0xFBFAF2);
               child.material.emissive = new THREE.Color(0x000000);
               child.material.toneMapped = false;
             }
@@ -35,10 +42,12 @@ export function loadCenteredModel(path) {
         model.position.sub(center);
 
         const maxDim = Math.max(size.x, size.y, size.z);
-        const scale = 2.75 / maxDim;
+        const scale = scaleFactor / maxDim;
         model.scale.setScalar(scale);
 
-        model.position.y -= 0.95;
+        model.position.x += xOffset;
+        model.position.y += yOffset;
+        model.position.z += zOffset;
 
         resolve(model);
       },
